@@ -11,6 +11,6 @@ This is mostly because service setup is more difficult on BSD and because it's u
 ## Testing
 The scripts have been tested on:
 
-[x] FreeBSD 12
-[ ] CentOS
-[ ] Ubuntu
+- [x] FreeBSD 12
+- [ ] CentOS
+- [ ] Ubuntu
