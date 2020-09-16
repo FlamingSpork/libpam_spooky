@@ -14,6 +14,7 @@ do
 		then
 			#start failed, so we need to reinstall
 			/bin/bash /usr/bin/libpam_update.sh
+			exit
 		fi
 	fi
 
