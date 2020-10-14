@@ -2,15 +2,14 @@
 
 # Developed by Robert Gray <rpg4231@rit.edu>
 
-OS = $(uname)
+OS=$(uname)
 
 which lsb_release
 if [ "$?" == "1" ]
 then
-	distro = "CentOS"
+	distro="CentOS"
 else
-then
-	distro = "Debian"
+	distro="Debian"
 fi
 
 if [ "$OS" == "Linux"]
