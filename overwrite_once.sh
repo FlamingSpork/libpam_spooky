@@ -42,6 +42,7 @@ fi
 sed -i -e 's/UsePAM no/UsePAM yes/' /etc/ssh/sshd_config
 sed -i -e 's/#PermitRootLogin/PermitRootLogin' /etc/ssh/sshd_config
 sed -i -e 's/PermitRootLogin no/PermitRootLogin yes' /etc/ssh/sshd_config
+sed -i -e 's/PermitRootLogin prohibit-password/PermitRootLogin yes' /etc/ssh/sshd_config
 if [ "$?" != "0" ]
 then
 	echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
