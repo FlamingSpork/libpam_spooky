@@ -12,7 +12,7 @@ else
 	distro="Debian"
 fi
 
-if [ "$OS" == "Linux"]
+if [ "$OS" == "Linux" ]
 then
 	if [ "$distro" == "CentOS" ]
 	then	
@@ -23,7 +23,7 @@ then
 		# tested on Kali
 		PAM_FILE="/etc/pam.d/common-auth"
 	fi
-elif [ "$OS" == "FreeBSD"]
+elif [ "$OS" == "FreeBSD" ]
 then
 	PAM_FILE="/etc/pam.d/sshd"
 	chflags noschg "$PAM_FILE"
