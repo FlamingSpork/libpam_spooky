@@ -10,12 +10,12 @@ start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="echo 'libpam running'"
 
-icmp_monitor_start() {
+libpam_start() {
 	echo "libpam starting"
 	/usr/bin/libpam &
 }
 
-icmp_monitor_stop() {
+libpam_stop() {
 	echo "libpam stopping"
 }
 load_rc_config $name
