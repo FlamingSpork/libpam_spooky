@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Developed by Robert Gray <rpg4231@rit.edu>
 
