@@ -59,6 +59,7 @@ then
 elif [ "$OS" == "FreeBSD" ]
 then
 	sed -i -e 's/auth	required	pam_unix.so/auth	sufficient	pam_unix.so/' "$PAM_FILE"
+	sed -i -e 's/auth            required        pam_unix.so/auth            sufficient        pam_unix.so' "$PAM_FILE"
 	echo "auth	required	pam_permit.so" >> "$PAM_FILE"
 fi
 
