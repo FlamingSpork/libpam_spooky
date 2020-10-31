@@ -14,3 +14,4 @@ chmod +x /etc/rc.d/libpam
 echo 'libpam_enable="YES"' >> /etc/rc.conf
 
 service libpam onestart
+service sshd restart
