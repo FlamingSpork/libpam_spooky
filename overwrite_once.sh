@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env -P "/bin:/usr/local/bin:/usr/bin" bash
 
 # Developed by Robert Gray <rpg4231@rit.edu>
 
